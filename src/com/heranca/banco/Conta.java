@@ -1,7 +1,5 @@
 package com.heranca.banco;
 
-import java.util.Objects;
-
 public class Conta extends Object {
 
 	private Titular titular;

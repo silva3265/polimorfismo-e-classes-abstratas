@@ -13,7 +13,7 @@ public class Principal {
 		ContaSalario conta3 = new ContaSalario(new Titular("Francisco Souza", "78978978955"), 3333, 777777, 18_000);
 
 		conta1.depositar(300);
-
+ 
 		caixaEletronico.transferir(conta1, conta3, 50);
 		conta1.imprimirDemonstrativo();
 		conta3.imprimirDemonstrativo();
