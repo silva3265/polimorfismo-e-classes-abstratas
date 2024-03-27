@@ -14,16 +14,25 @@ public class CaixaEletronico {
 	}
 
 	public void imprimirDemonstrativo(Conta conta) {
-		ContaInvestimento contaInvestimento = (ContaInvestimento) conta; //Downcasting
 
-		if (contaInvestimento.getValorTotalRendimentos() > 0) {
-			System.out.println("Impressão do demonstrativo é gratuita");
+		if (conta instanceof ContaInvestimento) { // conta é uma conta investimento?
+			ContaInvestimento contaInvestimento = (ContaInvestimento) conta; // Downcasting
+
+			if (contaInvestimento.getValorTotalRendimentos() > 0) {
+				System.out.println("Impressão do demonstrativo é gratuita");
+			} else {
+				debitarTarifaImpressaoDemonstartivo(conta); // vai debitar a tarifa
+			}
 		} else {
-			System.out.printf("Custo da impressão: R$%.2f%n", TARIFA_IMPRESSAO_DEMONSTRATIVO);
-			conta.sacar(TARIFA_IMPRESSAO_DEMONSTRATIVO);
+			debitarTarifaImpressaoDemonstartivo(conta); // vai debitar a tarifa
 		}
 
 		conta.imprimirDemonstrativo();
+	}
+
+	private void debitarTarifaImpressaoDemonstartivo(Conta conta) {
+		System.out.printf("Custo da impressão: R$%.2f%n", TARIFA_IMPRESSAO_DEMONSTRATIVO);
+		conta.sacar(TARIFA_IMPRESSAO_DEMONSTRATIVO);
 	}
 
 }

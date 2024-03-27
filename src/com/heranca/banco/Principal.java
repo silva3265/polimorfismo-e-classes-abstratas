@@ -15,7 +15,7 @@ public class Principal {
 		ContaSalario conta3 = new ContaSalario(new Titular("João da Silva", "12312312300"), 1234, 999999, 18_000);
 		conta3.depositar(100);
 
-		caixaEletronico.imprimirDemonstrativo(conta3);
+		caixaEletronico.imprimirDemonstrativo(conta1);
 	}
 
 }
