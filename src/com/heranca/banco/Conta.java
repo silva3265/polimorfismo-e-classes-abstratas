@@ -50,6 +50,10 @@ public class Conta extends Object {
 			throw new RuntimeException("Saldo insuficiente para saque");
 		}
 	}
+	
+	public boolean possuiGratuidadeImpressao() {
+		return false;
+	}
 
 	public void sacar(double valorSaque) {
 		if (valorSaque <= 0) {
