@@ -1,6 +1,6 @@
 package com.faturamento;
 
-public class NotaFiscal {
+public abstract class NotaFiscal { // abstract - vai impedir que instancie objetos dessa classe
 
 	private String descricao;
 	private double valorTotal;
