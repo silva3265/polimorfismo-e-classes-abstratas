@@ -18,9 +18,7 @@ public abstract class NotaFiscal { // abstract - vai impedir que instancie objet
 		return valorTotal;
 	}
 
-	public double calcularImpostos() {
-		return 0;
-	}
+	public abstract double calcularImpostos(); // quem herdar nota fiscal tera que fazer uma subescrita desse metodo
 
 	public void emitir() {
 		System.out.printf("Emitindo nota fiscal para: %s%n", getDescricao());
